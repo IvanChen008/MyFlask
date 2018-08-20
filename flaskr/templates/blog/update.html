@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <from method="post">
+    <form method="post">
         <label for="title">Title</label>
         <input name="title" id="title" value="{{ request.form['title'] or post['title'] }}" required>
         <label for="body">Body</label>
         <textarea  name="body" id="body">{{ request.form['body'] or post['title'] }}</textarea>
-        <input type="submit" value="Save">
-    </from>
+        <input type="submit" value="Save" formmethod="post">
+    </form>
     <hr>
     <form>
-        <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+        <input class="danger" type="submit" value="Delete" formmethod="post" onclick="return confirm('Are you sure?');">
     </form>
 {% endblock %}
